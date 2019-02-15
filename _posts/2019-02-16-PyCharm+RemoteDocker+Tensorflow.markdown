@@ -7,10 +7,6 @@ categories:
 description:
 ---
 
-## PyCharm + Remote Docker + Tensorflow
-
-잊어버릴까 봐 미리 정리
-
 ### Server Side
 Ubuntu 16.04 또는 18.04 설치 후 nvidia 그래픽드라이버 설치한 뒤,
 tensorflow.org 에서 install 가이드에 따라 설치.
