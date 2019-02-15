@@ -19,6 +19,7 @@ docker 와 nvidia-docker 설치 완료하면
 
 아래와 같이 default-runtime 부분을 추가해준다.
 /etc/docker/daemon.json
+
 ```
 {
   "default-runtime": "nvidia",
@@ -39,12 +40,14 @@ ExecStart=usrbindocker daemon -H fd:/ -H tcp://0.0.0.0:2375
 ```
 
 위 변경이 끝나면
+
 ```
 $ systemctl daemon-reload
 $ sudo systemctl docker restart
 ```
 
 위 작업이 끝나면 다음과 같이 실행해 볼 수 있다.
+
 ```
 sudo docker run -it --rm -v $PWD:/tmp -w /tmp tensorflow/tensorflow:latest-gpu-py3
 ```
@@ -74,6 +77,7 @@ Run/Debug Configurations를 아래 그림과 같이 바꿔준다.
 ![Configurations](https://github.com/Yujin-Soft/Yujin-Soft.github.io/raw/master/_screenshots/2019-02-16-009.png "Run/Debug Configurations")
 
 main.py 에 Python 예제 코드를 넣어본다.
+
 ```
 import tensorflow as tf
 mnist = tf.keras.datasets.mnist
@@ -103,8 +107,3 @@ model.evaluate(x_test, y_test)
 그리고 실행!
 
 ![Run](https://github.com/Yujin-Soft/Yujin-Soft.github.io/raw/master/_screenshots/2019-02-16-008.png "Run")
-
-
-
-
-
